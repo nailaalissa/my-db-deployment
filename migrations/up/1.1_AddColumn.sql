@@ -1,0 +1,2 @@
+ALTER TABLE Products
+ADD Price DECIMAL(10, 2);
