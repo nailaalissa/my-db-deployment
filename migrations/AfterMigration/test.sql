@@ -2,11 +2,11 @@
 
 MERGE INTO Products AS Target
 USING (
-    SELECT 1 AS ProductId, 'Laptop' AS Name, 2020.00 AS Price
+    SELECT 1 AS ProductId, 'Laptop' AS Name, 20.00 AS Price
     UNION ALL
-    SELECT 2, 'Smartphone', 500.00
+    SELECT 2, 'Smartphone', 300.00
     UNION ALL
-    SELECT 3, 'Tablet', 450.00
+    SELECT 3, 'Tablet', 50.00
 ) AS Source
 ON Target.ProductId = Source.ProductId
 WHEN MATCHED THEN
