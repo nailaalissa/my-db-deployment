@@ -23,4 +23,4 @@ jobs:
 
     - name: Run Grate Migrations
       run: |
-        grate --connectionstring "Server=localhost;Database=deployment;Trusted_Connection=True;Encrypt=False;" --files ".\\migrations"
+        grate --connectionstring "Server=DESKTOP-24A4POK;Database=deployment;Trusted_Connection=True;Encrypt=False;"  --files "./migrations"
