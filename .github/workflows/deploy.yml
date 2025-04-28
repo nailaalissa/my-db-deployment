@@ -1,0 +1,26 @@
+name: Deploy Database Migrations
+
+on:
+  push:
+    branches:
+      - main  # or your default branch
+
+jobs:
+  migrate:
+    runs-on: windows-latest  # 👈 now running on Windows!
+
+    steps:
+    - name: Checkout Code
+      uses: actions/checkout@v4
+
+    - name: Install .NET SDK
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: '8.0.x'  # Make sure it matches your local .NET version
+
+    - name: Install Grate
+      run: dotnet tool install --global grate
+
+    - name: Run Grate Migrations
+      run: |
+        grate --connectionstring "Server=localhost;Database=deployment;Trusted_Connection=True;Encrypt=False;" --files ".\\migrations"
